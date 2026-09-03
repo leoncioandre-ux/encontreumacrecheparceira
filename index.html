@@ -38,13 +38,13 @@ select:focus{outline:2px solid rgba(31,78,120,.18);border-color:var(--azul)}
 .sem{background:#fff;border:1px solid var(--borda);border-radius:12px;padding:30px;text-align:center;color:var(--cinza)}
 .oculto{display:none!important}
 .rodape-info{margin-top:22px;font-size:12px;color:#7a858d;line-height:1.5}
-.whatsapp-central{margin-top:22px;display:flex;justify-content:center}
-.whatsapp-link{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:8px;background:#25D366;color:#fff;text-decoration:none;font-size:14px;font-weight:bold;transition:opacity .2s}
+.whatsapp-central{display:flex;justify-content:flex-start;margin:0 0 16px}
+.whatsapp-link{display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border-radius:8px;background:#25D366;color:#fff;text-decoration:none;font-size:13px;font-weight:bold;transition:opacity .2s}
 .whatsapp-link:hover{opacity:.9}
-.whatsapp-icon{width:22px;height:22px;display:block;fill:currentColor}
+.whatsapp-icon{width:21px;height:21px;display:block;fill:currentColor}
 
 @media(max-width:900px){.lista{grid-template-columns:1fr}}
-@media(max-width:700px){.filtros{grid-template-columns:1fr}.hero{padding:24px 20px;gap:15px}.hero h1{font-size:25px}.hero-imagem{height:100px;max-width:30%}.container{padding:18px 12px 40px}.resultado-topo{align-items:flex-start;flex-direction:column;gap:5px}}
+@media(max-width:700px){.whatsapp-central{justify-content:flex-start}.filtros{grid-template-columns:1fr}.hero{padding:24px 20px;gap:15px}.hero h1{font-size:25px}.hero-imagem{height:100px;max-width:30%}.container{padding:18px 12px 40px}.resultado-topo{align-items:flex-start;flex-direction:column;gap:5px}}
 </style>
 </head>
 <body>
@@ -62,6 +62,14 @@ select:focus{outline:2px solid rgba(31,78,120,.18);border-color:var(--azul)}
 <section class="painel">
   <h2>Encontre uma unidade</h2>
   <div class="sub">Selecione a etapa de atendimento e a região desejada para consultar as creches parceiras disponíveis.</div>
+  <div class="whatsapp-central">
+    <a class="whatsapp-link" href="https://wa.me/551637119211" target="_blank" rel="noopener" aria-label="Falar com a Central de Vagas das Creches pelo WhatsApp">
+      <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.52 3.48A11.78 11.78 0 0 0 12.06 0C5.56 0 .27 5.29.27 11.79c0 2.08.54 4.11 1.57 5.9L.17 24l6.46-1.64a11.78 11.78 0 0 0 5.43 1.32h.01c6.5 0 11.78-5.29 11.78-11.79 0-3.15-1.23-6.11-3.33-8.41ZM12.07 21.64h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.83.97 1.02-3.73-.23-.38a9.79 9.79 0 0 1-1.5-5.14c0-5.39 4.39-9.77 9.78-9.77 2.61 0 5.06 1.02 6.91 2.86a9.73 9.73 0 0 1 2.86 6.92c0 5.39-4.39 9.77-9.78 9.77Zm5.36-7.33c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.65.15-.19.29-.75.95-.92 1.14-.17.19-.34.22-.63.07-.29-.15-1.21-.45-2.3-1.43-.85-.76-1.43-1.69-1.6-1.98-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.65-1.58-.89-2.17-.23-.57-.47-.49-.65-.5h-.55c-.19 0-.51.07-.78.36-.27.29-1.02 1-1.02 2.44 0 1.44 1.05 2.83 1.19 3.02.15.19 2.06 3.14 4.99 4.4.7.3 1.25.48 1.68.61.71.23 1.35.2 1.86.12.57-.08 1.72-.7 1.96-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34Z"/>
+      </svg>
+      WhatsApp da Central de Vagas em Creches
+    </a>
+  </div>
   <div class="filtros">
     <div>
       <div class="filtro-titulo">Qual etapa você procura?</div>
@@ -97,14 +105,7 @@ select:focus{outline:2px solid rgba(31,78,120,.18);border-color:var(--azul)}
   <div class="lista" id="listaCreches"></div>
   <div class="sem oculto" id="semResultados">Nenhuma unidade encontrada para os filtros selecionados.</div>
   <div class="rodape-info">Informações apresentadas conforme a base de unidades utilizada para esta página.</div>
-<div class="whatsapp-central">
-  <a class="whatsapp-link" href="https://wa.me/551637119211" target="_blank" rel="noopener" aria-label="Falar com a Central de Vagas das Creches pelo WhatsApp">
-    <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M20.52 3.48A11.78 11.78 0 0 0 12.06 0C5.56 0 .27 5.29.27 11.79c0 2.08.54 4.11 1.57 5.9L.17 24l6.46-1.64a11.78 11.78 0 0 0 5.43 1.32h.01c6.5 0 11.78-5.29 11.78-11.79 0-3.15-1.23-6.11-3.33-8.41ZM12.07 21.64h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.83.97 1.02-3.73-.23-.38a9.79 9.79 0 0 1-1.5-5.14c0-5.39 4.39-9.77 9.78-9.77 2.61 0 5.06 1.02 6.91 2.86a9.73 9.73 0 0 1 2.86 6.92c0 5.39-4.39 9.77-9.78 9.77Zm5.36-7.33c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.65.15-.19.29-.75.95-.92 1.14-.17.19-.34.22-.63.07-.29-.15-1.21-.45-2.3-1.43-.85-.76-1.43-1.69-1.6-1.98-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.65-1.58-.89-2.17-.23-.57-.47-.49-.65-.5h-.55c-.19 0-.51.07-.78.36-.27.29-1.02 1-1.02 2.44 0 1.44 1.05 2.83 1.19 3.02.15.19 2.06 3.14 4.99 4.4.7.3 1.25.48 1.68.61.71.23 1.35.2 1.86.12.57-.08 1.72-.7 1.96-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34Z"/>
-    </svg>
-    WhatsApp da Central de Vagas das Creches
-  </a>
-</div>
+
 </section>
 
 </div>
